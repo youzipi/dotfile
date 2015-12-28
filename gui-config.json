@@ -1,0 +1,34 @@
+{
+	"configs" : [
+		{
+			"server" : "104.250.146.212",
+			"server_port" : 23496,
+			"password" : "57430540",
+			"method" : "aes-256-cfb",
+			"remarks" : "ss-link",
+			"tcp_over_udp" : false,
+			"udp_over_tcp" : false,
+			"obfs_tcp" : false,
+			"obfs_udp" : false,
+			"enable" : true
+		}
+	],
+	"index" : 0,
+	"random" : true,
+	"global" : false,
+	"enabled" : false,
+	"shareOverLan" : false,
+	"isDefault" : false,
+	"localPort" : 1080,
+	"pacUrl" : null,
+	"useOnlinePac" : false,
+	"reconnectTimes" : 0,
+	"randomAlgorithm" : 2,
+	"TTL" : 0,
+	"socks5enable" : false,
+	"socks5Host" : "",
+	"socks5Port" : 0,
+	"socks5User" : "",
+	"socks5Pass" : "",
+	"autoban" : true
+}
