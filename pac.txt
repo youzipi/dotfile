@@ -4,6 +4,7 @@
 var proxy = "__PROXY__";
 
 var rules = [
+	"http://www.gravatar.com/avatar/",
 	"china-mmm.jp.net",
 	".china-mmm.net",
 	"||china-mmm.net",

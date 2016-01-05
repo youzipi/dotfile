@@ -16,7 +16,7 @@
 	"index" : 0,
 	"random" : true,
 	"global" : false,
-	"enabled" : false,
+	"enabled" : true,
 	"shareOverLan" : false,
 	"isDefault" : false,
 	"localPort" : 1080,
