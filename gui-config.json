@@ -1,20 +1,24 @@
 {
 	"configs" : [
 		{
+			"remarks" : "",
 			"server" : "104.250.146.212",
 			"server_port" : 23496,
 			"password" : "57430540",
 			"method" : "aes-256-cfb",
-			"remarks" : "ss-link",
+			"obfs" : "plain",
+			"obfsparam" : "",
+			"remarks_base64" : "",
 			"tcp_over_udp" : false,
 			"udp_over_tcp" : false,
-			"obfs_tcp" : false,
+			"protocol" : "origin",
 			"obfs_udp" : false,
-			"enable" : true
+			"enable" : true,
+			"id" : "43-82-3F-E3-B1-8A-BE-89-3D-53-C7-92-83-E7-E6-3E"
 		}
 	],
 	"index" : 0,
-	"random" : true,
+	"random" : false,
 	"global" : false,
 	"enabled" : true,
 	"shareOverLan" : false,
@@ -25,10 +29,11 @@
 	"reconnectTimes" : 0,
 	"randomAlgorithm" : 2,
 	"TTL" : 0,
-	"socks5enable" : false,
-	"socks5Host" : "",
-	"socks5Port" : 0,
-	"socks5User" : "",
-	"socks5Pass" : "",
+	"proxyEnable" : false,
+	"proxyType" : 0,
+	"proxyHost" : "",
+	"proxyPort" : 0,
+	"proxyAuthUser" : "",
+	"proxyAuthPass" : "",
 	"autoban" : true
 }
