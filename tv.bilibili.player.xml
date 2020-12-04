@@ -1,0 +1,14 @@
+<filters>
+  <item enabled="true">t=^2[3]{2,}$</item>
+  <item enabled="true">t=^[好|号]?[前|第|钱][\d|一|二|两|三|四|五|六|七|八|九|十]*[百|千|万]?[w|W]*[!|?|！|？|～]*$</item>
+  <item enabled="true">t=^[好前|解|嘤|哇|？|\?]$</item>
+  <item enabled="true">t=^[\w]{3,}$</item>
+  <item enabled="true">t=^H虐死了</item>
+  <item enabled="true">t=我从未见过[有]?如此厚颜无耻之人</item>
+  <item enabled="true">t=^[!|,|啊|哈|\w]*$</item>
+  <item enabled="true">t=^没人[\?]?$</item>
+  <item enabled="true">t=失踪人口</item>
+  <item enabled="true">t=这[个]?游戏[真|好|很]?[TM|tm]?好玩</item>
+  <item enabled="true">t=^红红火火</item>
+  <item enabled="true">t=大头死变态</item>
+</filters>
