@@ -1,13 +1,31 @@
+# go
+export GOROOT=/usr/local/go
+export GOPATH=/Users/youzipi/projects/go-work
+export PATH="$GOROOT:$PATH"
+# react
+export REACT_EDITOR=atom
+# android sdk
+export ANDROID_HOME=/usr/local/opt/android-sdk
+
+# chinese 中文乱码
+export LC_ALL=zh_CN.UTF-8  
+export LANG=zh_CN.UTF-8
+
+
+# for mac sed 
+export LC_CTYPE=C 
+export LANG=C
+
+
 # Path to your oh-my-zsh installation.
-export ZSH=/home/youzipi/.oh-my-zsh
+export ZSH=/Users/youzipi/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="random"
 ZSH_THEME="fwalch"
-  
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -41,7 +59,7 @@ ZSH_THEME="fwalch"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -50,11 +68,14 @@ ZSH_THEME="fwalch"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git virtualenv autojump)
+plugins=(git vitualenv autojump zsh-autosuggestions osx zshmarks)
+
+# zshmarks alias
+alias jj="jump"
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -72,8 +93,16 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# autojump
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# pyenv
+
+eval "$(pyenv init -)"
+
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -82,65 +111,41 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias cls='clear'
-alias l='ls -l'
-alias ll='ls -al'
-alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
-alias vi='vim'
-alias javac="javac -J-Dfile.encoding=utf8"
-alias grep="grep --color=auto"
-alias -s html=mate   # 在命令行直接输入后缀为 html 的文件名，会在 TextMate 中打开
-alias -s rb=mate     # 在命令行直接输入 ruby 文件，会在 TextMate 中打开
-alias -s py=vi       # 在命令行直接输入 python 文件，会用 vim 中打开，以下类似
-alias -s js=vi
-alias -s c=vi
-alias -s java=vi
-alias -s txt=vi
-alias -s gz='tar -xzvf'
-alias -s tgz='tar -xzvf'
-alias -s zip='unzip'
-alias -s bz2='tar -xjvf'
+#alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias rm="trash-put"
-alias sz='source ~/.zshrc'
-alias ai='sudo apt-get install'
-alias 0hexo='cd /media/youzipi/Software/Documents/0hexo'
-eval $(thefuck --alias)
+alias rna="react-native run-android"
+alias rni="react-native run-ios"
 
-alias history-top="history | awk '{CMD[$2]++;count++;} END { for (a in CMD )print CMD[ a ]" " CMD[ a ]/count*100 "% " a }' | grep -v "./" | column -c3 -s " " -t |sort -nr | nl | head -n10 "
+# brew
+alias bs="brew search"
+alias bcs="brew cask search"
+alias bi="brew install"
+alias bci="brew cask install"
 
-# -------------------------------------------------------------------
- # Git
- # -------------------------------------------------------------------
- alias gam="git commit -a -m"
-
-
-export NVM_DIR="/root/.nvm"
+# basic
+function mv2trash () {mv "$@" ~/.Trash}
+alias rm="mv2trash"
+alias date-f="date '+%Y-%m-%d %H:%M:%S'"
+export NVM_DIR="/Users/youzipi/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# history timestamp
+export HISTTIMEFORMAT='%F %T - '
 
-#Dircolors-solarized
-if [[ ($COLORTERM == gnome-terminal || $(cat /proc/$PPID/cmdline) == *gnome-terminal* )                                                                 
-       && $TERM != screen* ]]; then
-       export TERM=xterm-256color
-fi
-
-
-#powerline-status
-#if [[ -r /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh ]]; then
-#    source /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh
-#fi
-
-#Load zsh-syntax-highlighting.
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Load zsh-autosuggestions.
-source ~/.zsh/zsh-autosuggestions/autosuggestions.zsh
-#
-# # Enable autosuggestions automatically.
-zle-line-init() {
-     zle autosuggest-start
-     }
-zle -N zle-line-init
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+## shells
+#快速查看本机IP地址
+function myip(){
+myip="$(ifconfig | grep 'inet.*netmask.*broadcast')"
+lanip="$(echo $myip | awk '{print $2}')"
+publicip="$(echo $myip | awk '{print $6}')"
+echo '你的局域网IP是: '$lanip
+echo '你的外网IP是: '$publicip
+echo '复制到剪贴板' $lanip | pbcopy
+}
+# flow watch
+function flow-watch () {
+    flow status;
+    fswatch -e "/\." -o . | xargs -n1 -I{} flow status;
+}
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
